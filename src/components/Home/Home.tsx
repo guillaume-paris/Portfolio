@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom';
 // Material UI
 import { Box } from '@mui/system';
 import { Typography, Button } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 // styles
 import './../../styles/colors.css';
 import './Home.css';
 
-const Home: React.FC = () => {
 
-  const handleChipClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    console.log(event);
-  };
+const Home: React.FC = () => {
 
   return (
     <>

@@ -1,6 +1,5 @@
 import React from 'react';
 // Material UI
-import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import { Box } from '@mui/system';
 import { Typography, Link } from '@mui/material';
 // styles
@@ -22,6 +21,7 @@ const Footer: React.FC = () => {
         height: '20px',
         borderTop: 1,
         borderColor: '#333333',
+        backgroundColor: '#222222',
         }}>
         <Typography variant='body2'>
           <Link href={socialLinks.LinkedIn} style={{ marginLeft: '2em', color: '#fff', opacity: '0.5' }}>LinkedIn</Link>

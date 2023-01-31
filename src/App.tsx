@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 // styles
 import './styles/colors.css';
 import { theme } from './styles/theme';
@@ -19,18 +19,16 @@ const App: React.FC = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Box className='bg-color'>
-          <Header />
-          <Routes>
-            <Route path ="/" element={<Home />} />
-            <Route path ="/about" element={<About />} />
-            <Route path ="/projects" element={<Projects />} />
-            <Route path ="/resume" element={<Resume />} />
-            <Route path ="/contact" element={<Contact />} />
-            <Route path='*' element={<h1>404 Page</h1>} />
-          </Routes>
-          <Footer />
-        </Box>
+        <Header />
+        <Routes>
+          <Route path ="/" element={<Home />} />
+          <Route path ="/about" element={<About />} />
+          <Route path ="/projects" element={<Projects />} />
+          <Route path ="/resume" element={<Resume />} />
+          <Route path ="/contact" element={<Contact />} />
+          <Route path='*' element={<h1>404 Page</h1>} />
+        </Routes>
+        <Footer />
       </ThemeProvider>
   </>
   );
