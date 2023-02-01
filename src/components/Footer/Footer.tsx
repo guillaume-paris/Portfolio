@@ -14,7 +14,6 @@ const Footer: React.FC = () => {
         display: 'flex',
         justifyContent: 'space-between',
         padding: '1em 0',
-        position: 'fixed',
         bottom: 0,
         left: 0,
         width: '100%',

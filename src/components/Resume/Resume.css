@@ -1,0 +1,27 @@
+.react-pdf__Page__textContent {
+    display: none;
+}
+
+.react-pdf__Page__annotations {
+    display: none;
+}
+
+.annotationLayer {
+    display: none;
+}
+
+.react-pdf__Document {
+    display: flex;
+    justify-content: center;
+}
+
+.react-pdf__Page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.select-language {
+    border-color: white !important;
+}

@@ -19,6 +19,7 @@
     "react-pdf": "^6.2.2",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
   },
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@types/react-pdf": "^6.2.0",
-    "@types/react-router-dom": "^5.3.3"
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.26"
   }
 }

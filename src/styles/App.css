@@ -1,0 +1,9 @@
+.content {
+	min-height: calc(100vh - (119px + 53px));
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
