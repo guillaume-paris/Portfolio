@@ -1,5 +1,4 @@
 import React from 'react';
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import styled from 'styled-components';
 // Material UI
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
@@ -28,16 +27,6 @@ const Resume: React.FC = () => {
 
   const [ languageVersion, setLanguageVersion ] = React.useState<string>('en');
 
-  // eslint-disable-next-line
-  const [numPages, setNumPages] = React.useState<number | null>(null);
-  // eslint-disable-next-line
-  const [pageNumber, setPageNumber] = React.useState<number>(1);
-
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-    setPageNumber(1);
-  };
-
   const handleDownload = () => {
     const link = document.createElement("a");
     link.download = pdfFile[languageVersion];
@@ -61,12 +50,7 @@ const Resume: React.FC = () => {
           <MenuItem value={'fr'} sx={{ color: 'black' }}>French</MenuItem>
         </Select>
       </StyledFormControl>
-      <Document
-        file={'/documents/' + pdfFile[languageVersion]}
-        onLoadSuccess={onDocumentLoadSuccess}
-      >
-        <Page pageNumber={pageNumber} scale={1}/>
-      </Document>
+      <img src='/documents/Resume-guillaume-paris.jpg' alt='Resume' className='resume'/>
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: 4 }}>
         <Button variant='outlined' className='button-nav' onClick={handleDownload}>
           <Typography variant='h5' className='button-nav-text'>Download pdf</Typography>
