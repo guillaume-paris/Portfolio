@@ -1,7 +1,12 @@
 import React from 'react';
+import { MapComponent } from '../utils/GoogleMapComponent';
 
 const Contact: React.FC = () => {
-  return <h1>Contact Page</h1>;
+  return (
+    <>
+      <MapComponent />
+    </>
+    );
 };
 
 export default Contact;

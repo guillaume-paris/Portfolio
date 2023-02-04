@@ -21,16 +21,16 @@ const StyledFormControl = styled(FormControl)`
 const Resume: React.FC = () => {
 
   const pdfFile: Record<string, string> = {
-    'en': 'Resume-guillaume-paris.pdf',
-    'fr': 'CV-guillaume-paris.pdf'
+    'en': 'Resume-guillaume-paris',
+    'fr': 'CV-guillaume-paris'
   };
 
   const [ languageVersion, setLanguageVersion ] = React.useState<string>('en');
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.download = pdfFile[languageVersion];
-    link.href = '/documents/' + pdfFile[languageVersion];
+    link.download = pdfFile[languageVersion] + '.pdf';
+    link.href = '/documents/' + pdfFile[languageVersion] + '.pdf';
     link.click();
   };
 
@@ -50,10 +50,10 @@ const Resume: React.FC = () => {
           <MenuItem value={'fr'} sx={{ color: 'black' }}>French</MenuItem>
         </Select>
       </StyledFormControl>
-      <img src='/documents/Resume-guillaume-paris.jpg' alt='Resume' className='resume'/>
+      <img src={'/documents/' + pdfFile[languageVersion] + '.jpg'} alt='Resume' className='resume'/>
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: 4 }}>
         <Button variant='outlined' className='button-nav' onClick={handleDownload}>
-          <Typography variant='h5' className='button-nav-text'>Download pdf</Typography>
+          <Typography variant='h5'>Download pdf</Typography>
         </Button>
       </Box>
     </Box>

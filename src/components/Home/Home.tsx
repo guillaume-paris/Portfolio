@@ -19,10 +19,10 @@ const Home: React.FC = () => {
           <Typography variant='h1' className='name-of-dev'>Guillaume Paris</Typography>
           <Typography variant='h5'>Hi there ! I'm a Epitech student at the Nancy campus. I'm currently in my 3rd year of studies. In my professional experiences, I have worked with frameworks such as React or Angular. That's why I use them to make my own portfolio!</Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
-            <Button variant='outlined' className='button-nav' component={Link} to='/about'><Typography variant='h5' className='button-nav-text'>About</Typography></Button>
-            <Button variant='outlined' className='button-nav' component={Link} to='/projects'><Typography variant='h5' className='button-nav-text'>Projects</Typography></Button>
-            <Button variant='outlined' className='button-nav' component={Link} to='/resume'><Typography variant='h5' className='button-nav-text'>Resume</Typography></Button>
-            <Button variant='outlined' className='button-nav' component={Link} to='/contact'><Typography variant='h5' className='button-nav-text'>Contact</Typography></Button>
+            <Button variant='outlined' className='button-nav' component={Link} to='/about'><Typography variant='h5'>About</Typography></Button>
+            <Button variant='outlined' className='button-nav' component={Link} to='/projects'><Typography variant='h5'>Projects</Typography></Button>
+            <Button variant='outlined' className='button-nav' component={Link} to='/resume'><Typography variant='h5'>Resume</Typography></Button>
+            <Button variant='outlined' className='button-nav' component={Link} to='/contact'><Typography variant='h5'>Contact</Typography></Button>
           </Box>
         </Box>
       </Box>
