@@ -19,7 +19,7 @@ const Resume = () => {
     
     return (
         <div className="flex flex-col justify-center items-center gap-4">
-            <div className="">
+            <div className="mt-8">
                 <Select
                     className="text-white"
                     id="select-language-version"

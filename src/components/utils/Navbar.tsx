@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="bg-slate-800">
+            <nav className="bg-gray-900">
                 <div className="flex justify-between px-2 py-3">
                     <Link to="/" className="flex items-center px-4">
                         <img src='./assets/logo-header.png' alt='logo-nav-bar' />
