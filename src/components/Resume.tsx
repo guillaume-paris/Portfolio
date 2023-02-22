@@ -6,7 +6,7 @@ const Resume = () => {
     const pdfFile: Record<string, string> = {
         'en': 'Resume-guillaume-paris',
         'fr': 'CV-guillaume-paris'
-      };
+    };
     
     const [ languageVersion, setLanguageVersion ] = React.useState<string>('en');
 
