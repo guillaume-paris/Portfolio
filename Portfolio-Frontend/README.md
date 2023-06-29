@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Information about the project
+
+In this React project, I'm following a classic React Architecture from [this article](https://medium.com/stackanatomy/react-architecture-patterns-for-your-projects-6f495448f04b).
+
 ## Available Scripts
 
 In the project directory, you can run:
