@@ -2,10 +2,21 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Transition } from "@headlessui/react";
 
+import Modal from "./Modal";
+import LoginForm from "./LoginForm";
+
 function Nav() {
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
+  const openLoginModal = () => setIsLoginModalOpen(true);
+
+  const closeLoginModal = () => setIsLoginModalOpen(false);
+
   return (
-    <div>
+    <>
       <nav className="bg-gray-900">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -17,32 +28,37 @@ function Nav() {
                 </Link>
               </div>
               <div className="hidden md:flex md:justify-end">
-                <div className="ml-10 flex items-baseline space-x-4">
-                    <Link to="/" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <span>
-                            Home
-                        </span>
-                    </Link>
-                    <Link to="/about" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <span>
-                            About
-                        </span>
-                    </Link>
-                    <Link to="/projects" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <span>
-                            Projects
-                        </span>
-                    </Link>
-                    <Link to="/resume" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <span>
-                            Resume
-                        </span>
-                    </Link>
-                    <Link to="/contact" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <span>
-                            Contact
-                        </span>
-                    </Link>
+                <div className="ml-10 flex items-baseline space-x-4 justify-end">
+                  <Link to="/" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <span>
+                          Home
+                      </span>
+                  </Link>
+                  <Link to="/about" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <span>
+                          About
+                      </span>
+                  </Link>
+                  <Link to="/projects" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <span>
+                          Projects
+                      </span>
+                  </Link>
+                  <Link to="/resume" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <span>
+                          Resume
+                      </span>
+                  </Link>
+                  <Link to="/contact" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <span>
+                          Contact
+                      </span>
+                  </Link>
+                  <button onClick={openLoginModal} className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <span>
+                          Signin
+                      </span>
+                  </button>
                 </div>
             </div>
             <div className="-mr-2 flex md:hidden">
@@ -134,7 +150,11 @@ function Nav() {
           )}
         </Transition>
       </nav>
-    </div>
+
+      <Modal isOpen={isLoginModalOpen} closeModal={closeLoginModal} title="Sign in">
+        <LoginForm closeModal={closeLoginModal}></LoginForm>
+      </Modal>
+    </>
   );
 }
 
