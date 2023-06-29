@@ -13,7 +13,9 @@ Alternately, to quickly try out this repo in the cloud, you can [![Remix on Glit
 
 # Information about the project
 
-I'm following the best practices Architecture from this [link](https://scoutapm.com/blog/nodejs-architecture-and-12-best-practices-for-nodejs-development#practice2)
+I'm following the best practices Architecture from this [link](https://scoutapm.com/blog/nodejs-architecture-and-12-best-practices-for-nodejs-development#practice2).
+The server is running in a droplet DigitalOcean. It running with pm2 configured to auto-reload when a file changed.
+So for now, I have to pull main to deploy the latest version.
 
 ## Dependencies
 

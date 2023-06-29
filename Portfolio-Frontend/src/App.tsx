@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 // Components
-import Navbar from './components/utils/Navbar';
-import Footer from './components/utils/Footer';
-import Home from './components/Home';
-import About from './components/About';
-import Projects from './components/Projects';
-import Resume from './components/Resume';
-import Contact from './components/Contact';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
 // Styles
 import './styles/App.css';
 
