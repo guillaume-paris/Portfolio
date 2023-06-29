@@ -9,9 +9,16 @@ const generateToken = (user) => {
     name: user.name 
   };
   
-  const options = { expiresIn: '14d' };
+  const expiresIn = '14d';
   
-  return jwt.sign(payload, secretKey, options);
+  const token = jwt.sign(payload, secretKey, { expiresIn });
+  
+  const expiresInMs = parseInt(expiresIn, 10) * 24 * 60 * 60 * 1000;
+
+  return {
+    token,
+    expiresInMs
+  };
 };
 
 module.exports = {
