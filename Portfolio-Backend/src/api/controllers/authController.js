@@ -9,8 +9,8 @@ const signUp = async (req, res) => {
     }
     const user = new UserModel({ name, email, password });
     await user.save();
-    const token = authService.generateToken(user);
-    res.status(201).json({ token });
+    const { token, expiresInMs } = authService.generateToken(user);
+    res.status(201).json({ token, expiresIn: expiresInMs });
 };
   
 
@@ -20,8 +20,9 @@ const signIn = async (req, res) => {
   if (!user || !await user.isValidPassword(password)) {
     return res.status(401).json({ message: 'Invalid email or password' });
   }
-  const token = authService.generateToken(user);
-  res.json({ name: user.name, token });
+  const { token, expiresInMs } = authService.generateToken(user);
+  console.log("expireIn", expiresInMs);
+  res.json({ name: user.name, token, expiresIn: expiresInMs });
 };
 
 module.exports = {
