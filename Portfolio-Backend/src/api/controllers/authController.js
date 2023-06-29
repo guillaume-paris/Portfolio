@@ -21,7 +21,6 @@ const signIn = async (req, res) => {
     return res.status(401).json({ message: 'Invalid email or password' });
   }
   const { token, expiresInMs } = authService.generateToken(user);
-  console.log("expireIn", expiresInMs);
   res.json({ name: user.name, token, expiresIn: expiresInMs });
 };
 
