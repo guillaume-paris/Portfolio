@@ -11,6 +11,10 @@ Alternately, to quickly try out this repo in the cloud, you can [![Remix on Glit
 
 # Code Overview
 
+# Information about the project
+
+I'm following the best practices Architecture from this [link](https://scoutapm.com/blog/nodejs-architecture-and-12-best-practices-for-nodejs-development#practice2)
+
 ## Dependencies
 
 - [expressjs](https://github.com/expressjs/express) - The server for handling and routing HTTP requests
