@@ -1,5 +1,4 @@
 import React from 'react';
-import { Select, Option } from "@material-tailwind/react";
 
 const Resume = () => {
 
@@ -20,7 +19,7 @@ const Resume = () => {
     return (
         <div className="flex flex-col justify-center items-center gap-4">
             <div className="mt-8">
-                <Select
+                {/* <Select
                     className="text-white"
                     id="select-language-version"
                     value={languageVersion}
@@ -28,7 +27,7 @@ const Resume = () => {
                     onChange={() => setLanguageVersion(languageVersion === 'en' ? 'fr' : 'en')}>
                     <Option value={'en'} className="text-black">English</Option>
                     <Option value={'fr'} className="text-black">Français</Option>
-                </Select>
+                </Select> */}
             </div>
             <div className="flex justify-center items-center">
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleDownload}>

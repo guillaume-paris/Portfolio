@@ -28,6 +28,9 @@ function Home() {
                 <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full border-gray-500 border-2">
                     <Link to="/contact">Contact</Link>
                 </button>
+                <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full border-gray-500 border-2">
+                    <Link to="/profile">Profile</Link>
+                </button>
                 <button onClick={handleTest} className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full border-gray-500 border-2">
                     Test    
                 </button>
