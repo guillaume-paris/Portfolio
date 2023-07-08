@@ -19,6 +19,10 @@ a:focus, a:hover, a:link, a:visited {
   outline: none;
 }
 
+select:focus-visible {
+  outline: none;
+}
+
 .content {
 	min-height: calc(100vh - (119px + 53px));
 }

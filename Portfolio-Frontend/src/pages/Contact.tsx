@@ -69,9 +69,9 @@ const Contact = () => {
     };
     
     return (
-        <div className="mx-10 py-10">
+        <div className="h-screen pt-16 flex justify-center items-center">
             {/* <MapComponent /> */}
-            <form onSubmit={handleSubmit} className=" p-10">
+            <form onSubmit={handleSubmit} className="w-2/3 p-10">
                 <div className="mb-4">
                     <label className="text-white block font-bold mb-2" htmlFor="nom">
                     Full name

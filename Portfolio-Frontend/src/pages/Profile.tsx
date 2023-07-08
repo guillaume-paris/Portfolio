@@ -50,7 +50,7 @@ function Profile() {
 
   return (
     <>
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center h-screen pt-16">
         <Card className="flex flex-col justify-center items-center">
           {!isAuthenticated && <>
             <span className="text-white p-10">
@@ -66,8 +66,8 @@ function Profile() {
           </>}
           {isAuthenticated && <>
             <div className="flex flex-row m-5">
-              <img src={require("../assets/default_user.jpg")} alt="profile" className="rounded-full w-52 h-52"></img>
-              <div className="flex flex-col justify-center items-start p-10 gap-3 text-white text-2xl">
+              <img src={require("../assets/default_user.jpg")} alt="profile" className="rounded-full w-1/4 h-1/4"></img>
+              <div className="flex flex-col justify-center items-start p-10 gap-3 text-white text-xl">
                 <span>
                   Username : <span className="font-bold">{userInfo.username}</span> 
                 </span>
@@ -80,7 +80,7 @@ function Profile() {
               </div>
             </div>
             <div className="flex flex-row justify-between py-5 px-12 w-full">
-              <div className="flex flex-col text-white text-2xl gap-3">
+              <div className="flex flex-col text-white text-xl gap-3">
                 <span>
                   Age : <span className="font-bold">{userInfo.age}</span> 
                 </span>
@@ -88,7 +88,7 @@ function Profile() {
                   City : <span className="font-bold">{userInfo.city}</span> 
                 </span>
               </div>
-              <div className="flex flex-col text-white text-2xl gap-3">
+              <div className="flex flex-col text-white text-xl gap-3">
                 <span>
                   Country : <span className="font-bold">{userInfo.country}</span> 
                 </span>
@@ -99,11 +99,11 @@ function Profile() {
             </div>
             <div className="flex flex-col self-start text-lg gap-3 py-4 px-12 w-full">
               <label className="mb-2 text-white text-lg font-medium text-gray-900">
-                Description
+                Description :
                 <textarea
-                  id="message"
-                  rows={4}
-                  className="p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  id="description"
+                  rows={2}
+                  className="mt-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                   value={userInfo.description}/>
               </label>
             </div>
