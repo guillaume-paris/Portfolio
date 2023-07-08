@@ -19,6 +19,18 @@ function Profile() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
 
+  const [userInfo, setUserInfo] = useState({
+    username: "",
+    email: "",
+    sexe: "",
+    age: 0,
+    city: "",
+    country: "",
+    nationality: "",
+    description: "",
+    profilePicture: "",
+  });
+
   const openLoginModal = () => setIsLoginModalOpen(true);
   const openRegisterModal = () => setIsRegisterModalOpen(true);
 
@@ -29,6 +41,12 @@ function Profile() {
 
   const closeLoginModal = () => setIsLoginModalOpen(false);
   const closeRegisterModal = () => setIsRegisterModalOpen(false);
+
+  useEffect(() => {
+    const username = authService.getCurrentUser().name;
+    setUserInfo({ ...userInfo, username: username, email: "testBrut@gmail.com", age: 21, sexe: "casserole", city: "Colorado", country: "France", nationality: "French", description: "Hi it's a test" });
+  }, []);
+
 
   return (
     <>
@@ -47,12 +65,52 @@ function Profile() {
             </Button>
           </>}
           {isAuthenticated && <>
-            <button onClick={onLogout} className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-              <span>
-                  Log out
-              </span>
-            </button>
-            
+            <div className="flex flex-row m-5">
+              <img src={require("../assets/default_user.jpg")} alt="profile" className="rounded-full w-52 h-52"></img>
+              <div className="flex flex-col justify-center items-start p-10 gap-3 text-white text-2xl">
+                <span>
+                  Username : <span className="font-bold">{userInfo.username}</span> 
+                </span>
+                <span>
+                  Email : <span className="font-bold">{userInfo.email}</span>
+                </span>
+                <span>
+                  Sexe : <span className="font-bold">{userInfo.sexe}</span>
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-row justify-between py-5 px-12 w-full">
+              <div className="flex flex-col text-white text-2xl gap-3">
+                <span>
+                  Age : <span className="font-bold">{userInfo.age}</span> 
+                </span>
+                <span>
+                  City : <span className="font-bold">{userInfo.city}</span> 
+                </span>
+              </div>
+              <div className="flex flex-col text-white text-2xl gap-3">
+                <span>
+                  Country : <span className="font-bold">{userInfo.country}</span> 
+                </span>
+                <span>
+                  Nationality : <span className="font-bold">{userInfo.nationality}</span> 
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col self-start text-lg gap-3 py-4 px-12 w-full">
+              <label className="mb-2 text-white text-lg font-medium text-gray-900">
+                Description
+                <textarea
+                  id="message"
+                  rows={4}
+                  className="p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  value={userInfo.description}/>
+              </label>
+            </div>
+
+            <Button type="button" onClick={onLogout} color="secondary" className="mb-5 self-end m-5">
+              Log out
+            </Button>
           </>}
         </Card>
       </div>
