@@ -1,15 +1,8 @@
 import { Link } from "react-router-dom";
 
 function Home() {
-
-    const API_URL = process.env.REACT_APP_API_URL;
-
-    const handleTest = () => {
-        console.log(API_URL);
-    }
-
     return (
-    <div className="flex xl:flex-row flex-col items-center justify-center">
+    <div className="flex xl:flex-row flex-col items-center justify-center h-screen pt-16">
         <img src="/assets/globe-homepage.png" alt="globe-homepage" />
         <div className="flex flex-col text-white gap-2 xl:w-2/5 w-4/5">
             <span className="text-2xl">Front-end developer</span>
@@ -28,8 +21,8 @@ function Home() {
                 <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full border-gray-500 border-2">
                     <Link to="/contact">Contact</Link>
                 </button>
-                <button onClick={handleTest} className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full border-gray-500 border-2">
-                    Test    
+                <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full border-gray-500 border-2">
+                    <Link to="/profile">Profile</Link>
                 </button>
             </div>
         </div>

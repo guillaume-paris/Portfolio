@@ -6,6 +6,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In this React project, I'm following a classic React Architecture from [this article](https://medium.com/stackanatomy/react-architecture-patterns-for-your-projects-6f495448f04b).
 
+## Features to improve the project
+
+- [ ] Add a loading spinner when the data is loading
+- [ ] Add a 404 page
+- [ ] Add a maintenance page triggered by a remote control (firebase)
+- [ ] Add a dropdown button for profile menu (logout, settings, etc.)
+- [ ] Add a dark mode with a toggle button
+
 ## Available Scripts
 
 In the project directory, you can run:

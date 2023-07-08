@@ -18,26 +18,22 @@ type AuthProviderProps = {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
 
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+        const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        const expireIn = localStorage.getItem('token_expiration');
+        useEffect(() => {
+            const userInfo = JSON.parse(localStorage.getItem("user") || "{}");
+            const token = userInfo?.token;
+        
+            if (token) {
+                setIsAuthenticated(true);
+            } else {
+                setIsAuthenticated(false);
+            }
+        }, []);
 
-        const expireInNum = expireIn ? Number(expireIn) : null;
-
-        if (token && expireInNum && Date.now() / 1000 < expireInNum) {
-            setIsAuthenticated(true);
-        } else {
-            localStorage.removeItem('token');
-            localStorage.removeItem('token_expiration');
-            setIsAuthenticated(false);
-        }
-    }, []);
-
-    return (
-        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-            {children}
-        </AuthContext.Provider>
-    );
+        return (
+                <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+                        {children}
+                </AuthContext.Provider>
+        );
 };
