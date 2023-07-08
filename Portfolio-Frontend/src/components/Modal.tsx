@@ -40,7 +40,7 @@ const Modal: FC<ModalProps> = ({ isOpen, closeModal, title, children }) => {
             <button className="absolute right-3 top-3 m-2" onClick={closeModal}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
-            {title && <h1 className="text-center text-2xl font-bold mb-4">{title}</h1>}
+            {title && <h1 className="text-center text-2xl font-bold m-4">{title}</h1>}
             {children}
           </ModalContainer>
         </div>

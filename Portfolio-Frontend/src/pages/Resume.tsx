@@ -17,7 +17,7 @@ const Resume = () => {
     };
     
     return (
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-4 py-10">
             <div className="mt-8">
                 {/* <Select
                     className="text-white"

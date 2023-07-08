@@ -69,7 +69,7 @@ const Contact = () => {
     };
     
     return (
-        <div className="mx-10 my-4">
+        <div className="mx-10 py-10">
             {/* <MapComponent /> */}
             <form onSubmit={handleSubmit} className=" p-10">
                 <div className="mb-4">

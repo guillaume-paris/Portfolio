@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { AuthContext } from "../context/AuthContext";
 
 import { faUser as faUser } from "@fortawesome/free-regular-svg-icons";
 
 function Nav() {
 
-  const [name, setName] = useState(localStorage.getItem("name") || "");
+  const { isAuthenticated } = useContext(AuthContext);
+
+  const [name, setName] = useState("");
 
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("user") || "{}");
+    setName(userInfo.name);
+  }, [isAuthenticated]);
 
   return (
     <>
@@ -19,8 +27,7 @@ function Nav() {
               <div className="flex-shrink-0">
                 <Link to="/" className="flex items-center px-4">
                     <img src='./assets/logo-header.png' alt='logo-nav-bar' width={40} height={40} />
-                    <span className="text-white text-2xl font-bold ml-4">Web</span>
-                    <span className="text-white text-2xl font-regular">dev</span>
+                    <span className="text-white text-2xl ml-4"><span className="font-bold">Guillaume </span><span className="font-regular">portfolio</span></span>
                 </Link>
               </div>
               <div className="hidden md:flex md:justify-end">
@@ -52,7 +59,7 @@ function Nav() {
                   </Link>
                   <Link to="/profile" className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
                       <span>
-                        {name}<FontAwesomeIcon icon={faUser} className="text-white mx-2" />
+                        {name ?? "Profile"}<FontAwesomeIcon icon={faUser} className="text-white ml-2" />
                       </span>
                   </Link>
                 </div>

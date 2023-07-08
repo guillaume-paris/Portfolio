@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 
 const Projects = () => {
 
-    const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,9 +15,11 @@ const Projects = () => {
   }, [isAuthenticated, navigate]);
     
     return (
-        <div className="text-white container mx-auto p-10">
-            <h1 className="text-white text-5xl font-bold">Projects</h1><br></br>
-        </div>
+      <div className="h-screen flex justify-center items-center">
+          <div className="text-white p-10">
+              <h1 className="text-white text-5xl font-bold">Project</h1>
+          </div>
+      </div>
     );
 }
 
