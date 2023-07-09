@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 function Home() {
     return (
-    <div className="flex xl:flex-row flex-col items-center justify-center h-screen pt-16">
-        <img src="/assets/globe-homepage.png" alt="globe-homepage" />
+    <div className="flex xl:flex-row flex-col items-center justify-center h-screen pt-20">
+        <img src="/assets/globe-homepage.png" alt="globe-homepage" className="pt-44 md:pt-36 xl:pt-0"/>
         <div className="flex flex-col text-white gap-2 xl:w-2/5 w-4/5">
             <span className="text-2xl">Front-end developer</span>
             <span className="text-5xl font-bold">Guillaume Paris</span>
