@@ -4,13 +4,12 @@ import { AuthService } from "../../../services/AuthService";
 import { AuthContext } from "../../../context/AuthContext";
 import { UserService } from "../../../services/UserService";
 
-export interface DeleteModalProps {
+export interface DeleteUserProps {
   closeModal: () => void;
 }
 
-function DeleteModal({ closeModal }: DeleteModalProps) {
+function DeleteUser({ closeModal }: DeleteUserProps) {
 
-  const authService = new AuthService();
   const userService = new UserService();
   const { setIsAuthenticated } = useContext(AuthContext);
 
@@ -47,4 +46,4 @@ function DeleteModal({ closeModal }: DeleteModalProps) {
   </>);
 }
 
-export default DeleteModal;
+export default DeleteUser;
