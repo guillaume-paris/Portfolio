@@ -22,7 +22,7 @@ function Profile() {
   const [userInfo, setUserInfo] = useState({
     username: "",
     email: "",
-    sexe: "",
+    gender: "",
     age: 0,
     city: "",
     country: "",
@@ -44,7 +44,7 @@ function Profile() {
 
   useEffect(() => {
     const username = authService.getCurrentUser().name;
-    setUserInfo({ ...userInfo, username: username, email: "testBrut@gmail.com", age: 21, sexe: "casserole", city: "Colorado", country: "France", nationality: "French", description: "Hi it's a test" });
+    setUserInfo({ ...userInfo, username: username, email: "testBrut@gmail.com", age: 21, gender: "casserole", city: "Colorado", country: "France", nationality: "French", description: "Hi it's a test" });
   }, []);
 
 
@@ -75,7 +75,7 @@ function Profile() {
                   Email : <span className="font-bold">{userInfo.email}</span>
                 </span>
                 <span>
-                  Sexe : <span className="font-bold">{userInfo.sexe}</span>
+                  Gender : <span className="font-bold">{userInfo.gender}</span>
                 </span>
               </div>
             </div>
