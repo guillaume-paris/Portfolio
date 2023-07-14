@@ -13,7 +13,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
-import Profile from './pages/Profile';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   return (
