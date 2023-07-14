@@ -1,7 +1,5 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Button from "../../../components/Button";
-import { AuthService } from "../../../services/AuthService";
-import { AuthContext } from "../../../context/AuthContext";
 import { UserService } from "../../../services/UserService";
 import Input from "../../../components/Input";
 import Textarea from "../../../components/Textarea";
@@ -28,13 +26,13 @@ function EditUser({ closeModal, userInfoSeed, refreshUserInfo }: EditUserProps) 
 
   const [userInfo, setUserInfo] = useState<userInfo>(userInfoSeed);
 
-  const onSubmit = async () => {
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     try {
-      console.log("debug")
       const response = await userService.editUser(userInfo);
       if (response.status === 200) {
-        closeModal();
         refreshUserInfo();
+        closeModal();
       }
     } catch (error) {
       console.error(error);
@@ -42,7 +40,6 @@ function EditUser({ closeModal, userInfoSeed, refreshUserInfo }: EditUserProps) 
   }
 
   const onCancel = () => {
-    // setUserInfo(userInfoSeed);
     closeModal();
   }
 

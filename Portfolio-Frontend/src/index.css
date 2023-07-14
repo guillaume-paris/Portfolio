@@ -27,6 +27,12 @@ select:focus-visible {
 	min-height: calc(100vh - (119px + 53px));
 }
 
+@media (min-width: 380px) {
+  .display-block {
+    display: block;
+  }
+}
+
 /* To remove the arrows of <input type="number"/> */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

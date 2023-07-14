@@ -24,7 +24,7 @@ function Nav() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLink to="/" className="flex items-center px-4">
             <img src='./assets/logo-header.png' alt='logo-nav-bar' width={40} height={40} />
-            <span className="text-white text-lg ml-4 lg:text-2xl"><span className="font-bold">Guillaume </span><span className="font-regular">portfolio</span></span>
+            <span className="text-white text-lg ml-4 lg:text-2xl hidden display-block"><span className="font-bold">Guillaume </span><span className="font-regular">portfolio</span></span>
           </NavLink>
           <div className="flex md:order-2">
             <button onClick={toggleMenu} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">

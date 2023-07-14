@@ -75,53 +75,32 @@ function Authenticated() {
     <>
       {isLoading ? <Spinner text="Loading ..."></Spinner> :
         <>
-          <div className="flex flex-row m-5">
-            <img src={require("../../../assets/default_user.jpg")} alt="profile" className="rounded-full w-1/4 h-1/4"></img>
-            <div className="flex flex-col justify-center items-start p-10 gap-3 text-white text-xl">
-              
-              <span className="flex flex-row gap-3 w-full whitespace-nowrap">
-                Username : <span className="font-bold">{userInfo.name ?? "N/A"}</span>
-              </span>
-              <span>
-                Email : <span className="font-bold">{userInfo.email ?? "N/A"}</span>
-              </span>
-              <span>
-                Gender : <span className="font-bold">{userInfo.gender ?? "N/A"}</span>
-              </span>
+          <div className="flex flex-col md:flex-row m-5 pt-24 sm:pt-0">
+            <img src={require("../../../assets/default_user.jpg")} alt="profile" width={200} height={150} className="rounded-full"></img>
+            <div className="hidden md:flex md:flex-col justify-center md:items-start p-10 gap-3 text-white text-xl">
+              <span className="flex flex-col sm:flex-row whitespace-pre">Username : <span className="font-bold">{userInfo.name ?? "N/A"}</span></span>
+              <span className="flex flex-col sm:flex-row whitespace-pre">Email : <span className="font-bold">{userInfo.email ?? "N/A"}</span></span>
+              <span className="flex flex-col sm:flex-row whitespace-pre">Gender : <span className="font-bold">{userInfo.gender ?? "N/A"}</span></span>
             </div>
           </div>
-          <div className="flex flex-row justify-between py-5 px-12 w-full">
-            <div className="flex flex-col text-white text-xl gap-3">
-              <span>
-                Age : <span className="font-bold">{userInfo.age ?? "N/A"}</span> 
-              </span>
-              <span>
-                City : <span className="font-bold">{userInfo.city ?? "N/A"}</span> 
-              </span>
-            </div>
-            <div className="flex flex-col text-white text-xl gap-3">
-              <span>
-                Country : <span className="font-bold">{userInfo.country ?? "N/A"}</span> 
-              </span>
-              <span>
-                Nationality : <span className="font-bold">{userInfo.nationality ?? "N/A"}</span> 
-              </span>
-            </div>
+          <div className="grid grid-cols-2 gap-4 text-white text-xl w-full px-2">
+            <span className="flex flex-col sm:flex-row whitespace-pre">Username : <span className="font-bold">{userInfo.name ?? "N/A"}</span></span>
+            <span className="flex flex-col sm:flex-row whitespace-pre md:hidden">Email : <span className="font-bold">{userInfo.email ?? "N/A"}</span></span>
+            <span className="flex flex-col sm:flex-row whitespace-pre md:hidden">Gender : <span className="font-bold">{userInfo.gender ?? "N/A"}</span></span>
+            <span className="flex flex-col sm:flex-row whitespace-pre md:hidden">Age : <span className="font-bold">{userInfo.age ?? "N/A"}</span></span>
+            <span className="flex flex-col sm:flex-row whitespace-pre">City : <span className="font-bold">{userInfo.city ?? "N/A"}</span></span>
+            <span className="flex flex-col sm:flex-row whitespace-pre">Country : <span className="font-bold">{userInfo.country ?? "N/A"}</span></span>
+            <span className="flex flex-col sm:flex-row whitespace-pre">Nationality : <span className="font-bold">{userInfo.nationality ?? "N/A"}</span></span>
+            <span className="flex flex-col col-span-2 gap-2">Description : <span className="font-regular">{userInfo.description ?? "N/A"}</span></span>
           </div>
-          <div className="flex flex-col self-start text-white text-xl gap-3 py-4 px-12 w-full">
-            <span>
-              Description :
-            </span>
-            <span className="font-regular">{userInfo.description ?? "N/A"}</span> 
-          </div>
-          <div className="flex w-full justify-between">
-            <Button type="button" onClick={onDelete} color="red" className="mb-5 m-5">
+          <div className="flex w-full flex-col md:flex-row justify-between mb-2 m-5 gap-4">
+            <Button type="button" onClick={onDelete} color="red" className="">
               Delete account
             </Button>
-            <Button type="button" onClick={onEdit} color="blue" className="mb-5 m-5">
+            <Button type="button" onClick={onEdit} color="blue" className="">
               Edit info
             </Button>
-            <Button type="button" onClick={onLogout} color="secondary" className="mb-5 m-5">
+            <Button type="button" onClick={onLogout} color="secondary" className="">
               Log out
             </Button>
           </div>
