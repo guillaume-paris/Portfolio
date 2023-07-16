@@ -31,8 +31,8 @@ app.use((err, req, res, next) => {
 });
 
 const options ={
-  key:fs.readFileSync(path.join(__dirname,'./../certs/key.pem')),
-  cert:fs.readFileSync(path.join(__dirname,'./../certs/cert.pem')) 
+  key:fs.readFileSync(path.join(__dirname,'./../certs/server.key')),
+  cert:fs.readFileSync(path.join(__dirname,'./../certs/server.cert')) 
 }
 const sslserver =https.createServer(options,app)
 
