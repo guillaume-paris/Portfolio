@@ -2,6 +2,7 @@ require('dotenv').config();
 require('./config/database.js');
 
 const express = require('express');
+const http = require('http');
 const https = require('https');
 const path = require("path");
 const fs = require("fs");
@@ -32,21 +33,37 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-const options ={
-  key:fs.readFileSync(path.join(__dirname,'./../certs/server.key')),
-  cert:fs.readFileSync(path.join(__dirname,'./../certs/server.cert')) 
+let options = {};
+
+if (process.env.NODE_ENV === 'production') {
+  options = {
+    key: fs.readFileSync(process.env.SSL_KEY_PATH),
+    cert: fs.readFileSync(process.env.SSL_CERT_PATH)
+  };
 }
-const sslserver =https.createServer(options,app)
 
 const port = process.env.PORT || 4242;
 
-sslserver.listen(port, () => {
-  console.log(`API server listening on port ${port}`);
-}).on('error', (err) => {
-  if (err.code === 'EADDRINUSE') {
-    console.log(`Port ${port} is already in use. Please free up the port and try again.`);
-    process.exit(1);
-  } else {
-    throw err;
-  }
-});
+if (process.env.NODE_ENV === 'production') {
+  https.createServer(options, app).listen(port, () => {
+    console.log(`API server listening on port ${port}`);
+  }).on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${port} is already in use. Please free up the port and try again.`);
+      process.exit(1);
+    } else {
+      throw err;
+    }
+  });
+} else {
+  http.createServer(app).listen(port, () => {
+    console.log(`API server listening on port ${port}`);
+  }).on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.log(`Port ${port} is already in use. Please free up the port and try again.`);
+      process.exit(1);
+    } else {
+      throw err;
+    }
+  });
+}
