@@ -11,6 +11,7 @@ const cors = require('cors');
 const swaggerDocument = require('./config/swagger');
 const authRoutes = require('./api/routes/authRoutes');
 const userRoutes = require('./api/routes/userRoutes');
+const projectRoutes = require('./api/routes/projectRoutes');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(cors());
 // Main routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/project', projectRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
