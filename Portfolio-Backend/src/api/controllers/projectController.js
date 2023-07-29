@@ -1,5 +1,5 @@
 const ProjectModel = require('../../models/Project');
-const MAX_IMAGE_SIZE = 500000; // (500KB)
+const MAX_IMAGE_SIZE = 524288; // (0.5 MB)
 const multer = require('multer');
 const upload = multer({ 
   limits: { fileSize: MAX_IMAGE_SIZE },
