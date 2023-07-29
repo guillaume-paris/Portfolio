@@ -10,7 +10,7 @@ import { AuthProvider } from './context/AuthContext';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
-import Projects from './pages/Projects';
+import Projects from './pages/Projects/Projects';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import Profile from './pages/Profile/Profile';
