@@ -1,42 +1,6 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-// import { MapComponent } from '../utils/GoogleMapComponent';
 
 const Contact = () => {
-
-    // const sendEmail = async (to: string, from: string, subject: string, content: string) => {
-    //     try {
-    //       const result = await axios.post('https://smtp.sendgrid.net:25', {
-    //         personalizations: [
-    //           {
-    //             to: [
-    //               {
-    //                 email: to,
-    //               },
-    //             ],
-    //             subject: subject,
-    //           },
-    //         ],
-    //         from: {
-    //           email: from,
-    //         },
-    //         content: [
-    //           {
-    //             type: 'text/plain',
-    //             value: content,
-    //           },
-    //         ],
-    //       },
-    //       {
-    //         headers: {
-    //           Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
-    //           'Content-Type': 'application/json',
-    //         },
-    //       });
-    //       console.log(result);
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   };
 
     const [formData, setFormData] = useState({
         fullname: '',
