@@ -2,15 +2,14 @@ require('dotenv').config();
 require('./config/database.js');
 
 const express = require('express');
-const https = require('https');
-const path = require("path");
-const fs = require("fs");
+const http = require('http');
 const swaggerUi = require('swagger-ui-express');
 const cors = require('cors');
 
 const swaggerDocument = require('./config/swagger');
 const authRoutes = require('./api/routes/authRoutes');
 const userRoutes = require('./api/routes/userRoutes');
+const projectRoutes = require('./api/routes/projectRoutes');
 
 const app = express();
 
@@ -24,21 +23,16 @@ app.use(cors());
 // Main routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/project', projectRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 
-const options ={
-  key:fs.readFileSync(path.join(__dirname,'./../certs/key.pem')),
-  cert:fs.readFileSync(path.join(__dirname,'./../certs/cert.pem')) 
-}
-const sslserver =https.createServer(options,app)
-
 const port = process.env.PORT || 4242;
 
-sslserver.listen(port, () => {
+http.createServer(app).listen(port, () => {
   console.log(`API server listening on port ${port}`);
 }).on('error', (err) => {
   if (err.code === 'EADDRINUSE') {

@@ -4,7 +4,7 @@ export type defaultState = "default" | "editing";
 
 export interface InputProps {
   defaultState?: defaultState;
-  value: string | number;
+  value?: string | number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   type?: string;
   required?: boolean;
