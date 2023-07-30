@@ -3,9 +3,6 @@ require('./config/database.js');
 
 const express = require('express');
 const http = require('http');
-const https = require('https');
-const path = require("path");
-const fs = require("fs");
 const swaggerUi = require('swagger-ui-express');
 const cors = require('cors');
 
@@ -33,37 +30,15 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-let options = {};
-
-if (process.env.NODE_ENV === 'production') {
-  options = {
-    key: fs.readFileSync(process.env.SSL_KEY_PATH),
-    cert: fs.readFileSync(process.env.SSL_CERT_PATH)
-  };
-}
-
 const port = process.env.PORT || 4242;
 
-if (process.env.NODE_ENV === 'production') {
-  https.createServer(options, app).listen(port, () => {
-    console.log(`API server listening on port ${port}`);
-  }).on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-      console.log(`Port ${port} is already in use. Please free up the port and try again.`);
-      process.exit(1);
-    } else {
-      throw err;
-    }
-  });
-} else {
-  http.createServer(app).listen(port, () => {
-    console.log(`API server listening on port ${port}`);
-  }).on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-      console.log(`Port ${port} is already in use. Please free up the port and try again.`);
-      process.exit(1);
-    } else {
-      throw err;
-    }
-  });
-}
+http.createServer(app).listen(port, () => {
+  console.log(`API server listening on port ${port}`);
+}).on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.log(`Port ${port} is already in use. Please free up the port and try again.`);
+    process.exit(1);
+  } else {
+    throw err;
+  }
+});
