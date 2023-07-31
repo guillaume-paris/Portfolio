@@ -11,9 +11,10 @@ export interface InputProps {
   placeHolder?: string;
   className?: string;
   label?: string;
+  disabled?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ defaultState, value, onChange, type = "text", required = false, placeHolder, className = "", label = "" }) => {
+const Input: React.FC<InputProps> = ({ defaultState, value, onChange, type = "text", required = false, placeHolder, className = "", label = "", disabled = false }) => {
   return (
     <label className={`${className} flex flex-col gap-2 text-black font-regular text-md`}>
       {label}
@@ -24,6 +25,7 @@ const Input: React.FC<InputProps> = ({ defaultState, value, onChange, type = "te
         value={value}
         onChange={onChange}
         required={required}
+        disabled={disabled}
       />
     </label>
   );

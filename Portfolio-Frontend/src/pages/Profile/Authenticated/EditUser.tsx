@@ -3,6 +3,7 @@ import Button from "../../../components/Button";
 import { UserService } from "../../../services/UserService";
 import Input from "../../../components/Input";
 import Textarea from "../../../components/Textarea";
+import { AuthService } from "../../../services/AuthService";
 
 type userInfo = {
   name: string;
@@ -23,6 +24,7 @@ export interface EditUserProps {
 function EditUser({ closeModal, userInfoSeed, refreshUserInfo }: EditUserProps) {
 
   const userService = new UserService();
+  const authService = new AuthService();
 
   const [userInfo, setUserInfo] = useState<userInfo>(userInfoSeed);
 
@@ -31,6 +33,7 @@ function EditUser({ closeModal, userInfoSeed, refreshUserInfo }: EditUserProps) 
     try {
       const response = await userService.editUser(userInfo);
       if (response.status === 200) {
+        authService.editUserName(userInfo.name);
         refreshUserInfo();
         closeModal();
       }
