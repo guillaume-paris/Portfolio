@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 
 // Components
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 
 // Context
 import { AuthProvider } from './context/AuthContext';

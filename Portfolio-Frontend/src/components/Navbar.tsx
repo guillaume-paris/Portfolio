@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser as faUser } from "@fortawesome/free-regular-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { AuthContext } from "../context/AuthContext";
 
 function Nav() {

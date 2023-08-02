@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 
 type ButtonType = "submit" | "button";
 type ButtonColor = "primary" | "secondary" | "blue" | "red" | "green" | "purple" | "yellow" | "orange";
