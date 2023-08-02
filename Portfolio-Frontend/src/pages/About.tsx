@@ -12,7 +12,7 @@ const About = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        setLoaded(true);
+            setLoaded(true);
     }, []);
 
     return (
@@ -46,7 +46,6 @@ const About = () => {
                             <img width={60} height={60} className="rounded-xl" src={pwcLogo} alt="pwc-logo"/>
                             Software Developer Intern at PwC
                         </h3>
-                        <h3 className="text-2xl font-semibold text-white"></h3>
                         <p className="mb-4 text-xl font-normal text-gray-400"><FontAwesomeIcon icon={faHourglass} /> 6 month internship <FontAwesomeIcon icon={faBook} /> React <FontAwesomeIcon icon={faLocationDot} /> Howald, Luxembourg</p>
                     </div>
                 </li>
@@ -58,7 +57,6 @@ const About = () => {
                             <img width={60} height={60} className="rounded-xl" src={immopadLogo} alt="immopad-logo"/>
                             Software Developer Intern at Immopad
                         </h3>
-                        <h3 className="text-2xl font-semibold text-white"></h3>
                         <p className="mb-4 text-xl font-normal text-gray-400"><FontAwesomeIcon icon={faHourglass} /> 6 month part-time internship <FontAwesomeIcon icon={faBook} /> Angular <FontAwesomeIcon icon={faLocationDot} /> Nancy, France</p>
                     </div>
                 </li>
@@ -70,7 +68,6 @@ const About = () => {
                             <img width={60} height={60} className="rounded-xl" src={dennemeyerLogo} alt="dennemeyer-logo"/>
                             Software Developer Intern at Dennemeyer
                         </h3>
-                        <h3 className="text-2xl font-semibold text-white"></h3>
                         <p className="mb-4 text-xl font-normal text-gray-400"><FontAwesomeIcon icon={faHourglass} /> 4 month internship <FontAwesomeIcon icon={faBook} /> Angular and ASP.NET Core <FontAwesomeIcon icon={faLocationDot} /> Howald, Luxembourg</p>
                     </div>
                 </li>

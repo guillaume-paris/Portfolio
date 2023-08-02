@@ -6,9 +6,9 @@ import Button from "../../components/Button";
 import CardProject from "./CardProject";
 
 const MAX_FILE_SIZE = 524288; // (0.5 MB)
+const projectService = new ProjectService();
 
 const Projects = () => {
-  const projectService = new ProjectService();
   const [projects, setProjects] = useState<ProjectResponseDTO[]>([]);
   const [error, setError] = useState("");
   const [title, setTitle] = useState("");
