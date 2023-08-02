@@ -1,5 +1,4 @@
 import axios from "axios";
-import { type } from "os";
 
 const API_URL = process.env.REACT_APP_API_URL;
 

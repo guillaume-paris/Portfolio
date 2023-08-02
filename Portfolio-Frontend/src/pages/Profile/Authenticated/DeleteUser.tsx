@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import Button from "../../../components/Button";
-import { AuthService } from "../../../services/AuthService";
 import { AuthContext } from "../../../context/AuthContext";
 import { UserService } from "../../../services/UserService";
 

@@ -30,4 +30,13 @@ export class AuthService {
     getCurrentUser(): any {
         return JSON.parse(localStorage.getItem('user') || '{}');
     }
+
+    editUserName(newName: string): void {
+        const user = { ...JSON.parse(localStorage.getItem("user") || "{}") };
+        const updatedUser = {
+            ...user,
+            name: newName,
+        };
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+    }
 }

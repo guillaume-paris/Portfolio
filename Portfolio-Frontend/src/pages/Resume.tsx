@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../components/Button';
 
 const Resume = () => {
@@ -16,6 +16,12 @@ const Resume = () => {
         link.href = '/documents/' + pdfFile[languageVersion] + '.pdf';
         link.click();
     };
+
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        setLoaded(true);
+    }, []);
     
     return (
         <div className="flex flex-col justify-center items-center gap-4 py-16">
@@ -33,7 +39,7 @@ const Resume = () => {
                     Downoad pdf
                 </Button>
             </div>
-            <img src={'/documents/' + pdfFile[languageVersion] + '.jpg'} alt='Resume' className="2xl:w-2/4 md:w-2/3 w-11/12"/>
+            <img src={'/documents/' + pdfFile[languageVersion] + '.jpg'} alt='Resume' className={`2xl:w-2/4 md:w-2/3 w-11/12 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-in`}/>
         </div>
     );
 }

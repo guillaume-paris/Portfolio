@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser as faUser } from "@fortawesome/free-regular-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { AuthContext } from "../context/AuthContext";
 
 function Nav() {
@@ -40,7 +40,7 @@ function Nav() {
                 <NavLink
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) => isActive ? "text-blue-500" : "" + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
+                  className={({ isActive }) => (isActive ? "text-blue-500 " : "") + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
                     Home
                 </NavLink>
               </li>
@@ -48,7 +48,7 @@ function Nav() {
                 <NavLink
                   to="/about"
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) => isActive ? "text-blue-500" : "" + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
+                  className={({ isActive }) => (isActive ? "text-blue-500 " : "") + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
                     About
                 </NavLink>
               </li>
@@ -56,7 +56,7 @@ function Nav() {
                 <NavLink
                   to="/projects"
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) => isActive ? "text-blue-500" : "" + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
+                  className={({ isActive }) => (isActive ? "text-blue-500 " : "") + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
                     Projects
                 </NavLink>
               </li>
@@ -64,7 +64,7 @@ function Nav() {
                 <NavLink
                   to="/resume"
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) => isActive ? "text-blue-500" : "" + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
+                  className={({ isActive }) => (isActive ? "text-blue-500 " : "") + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
                     Resume
                 </NavLink>
               </li>
@@ -72,7 +72,7 @@ function Nav() {
                 <NavLink
                   to="/contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) => isActive ? "text-blue-500" : "" + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
+                  className={({ isActive }) => (isActive ? "text-blue-500 " : "") + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
                     Contact
                 </NavLink>
               </li>
@@ -80,7 +80,7 @@ function Nav() {
                 <NavLink
                   to="/profile"
                   onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) => isActive ? "text-blue-500" : "" + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
+                  className={({ isActive }) => (isActive ? "text-blue-500 " : "") + "block py-2 pl-3 pr-4 rounded md:p-0 md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"}>
                     {name ?? "Profile"} <FontAwesomeIcon icon={faUser} className="text-white ml-2" />
                 </NavLink>
               </li>

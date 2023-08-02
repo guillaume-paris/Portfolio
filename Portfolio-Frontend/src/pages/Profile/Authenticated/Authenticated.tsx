@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import Modal from "../../../components/Modal";
 import { AuthService } from "../../../services/AuthService";
 import { AuthContext } from "../../../context/AuthContext";
@@ -8,10 +8,10 @@ import { UserService } from "../../../services/UserService";
 import Spinner from "../../../components/Spinner";
 import EditUser from "./EditUser";
 
-function Authenticated() {
+const userService = new UserService();
 
+function Authenticated() {
   const authService = new AuthService();
-  const userService = new UserService();
   const { setIsAuthenticated } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(true);
   
@@ -48,7 +48,7 @@ function Authenticated() {
     openEditUserModal();
   }
 
-  const getUserInfo = async () => {
+  const getUserInfo = useCallback(async () => {
     setIsLoading(true);
     try {
       const response = await userService.getUser();
@@ -60,7 +60,7 @@ function Authenticated() {
     } finally {
       setIsLoading(false);
     }
-  }
+  }, []);
 
   const refreshUserInfo = () => {
     getUserInfo();
@@ -68,7 +68,7 @@ function Authenticated() {
 
   useEffect(() => {
     getUserInfo();
-  }, []);
+  }, [getUserInfo]);
 
   
   return (

@@ -11,3 +11,14 @@ axios.interceptors.request.use(function (config) {
 }, function (error) {
     return Promise.reject(error);
 });
+
+axios.interceptors.response.use(
+    response => response,
+    error => {
+        if (error.response.status === 401 && (error.response.data.message === "No token provided." || error.response.data.message === "Failed to authenticate token.")) {
+            localStorage.removeItem("user");
+            window.location.reload();
+        }
+        return Promise.reject(error);
+    }
+);
