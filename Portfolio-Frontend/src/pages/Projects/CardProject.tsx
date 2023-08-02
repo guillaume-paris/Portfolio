@@ -8,12 +8,13 @@ export interface CardProjectProps {
     data: string,
     contentType: string;
   }
+  className?: string;
 }
 
 
-const CardProject: React.FC<CardProjectProps> = ({ key, title, description, img }) => {
+const CardProject: React.FC<CardProjectProps> = ({ key, title, description, img, className }) => {
   return (
-    <Card key={key} className="flex flex-col">
+    <Card key={key} className={`flex flex-col ${className} max-w-sm min-w-1/2`}>
       <img 
         height={200}
         width={200}

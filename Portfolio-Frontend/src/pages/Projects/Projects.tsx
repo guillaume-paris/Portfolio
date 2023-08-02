@@ -9,6 +9,8 @@ const MAX_FILE_SIZE = 524288; // (0.5 MB)
 const projectService = new ProjectService();
 
 const Projects = () => {
+
+  const [animateProjects, setAnimateProjects] = useState(false);
   const [projects, setProjects] = useState<ProjectResponseDTO[]>([]);
   const [error, setError] = useState("");
   const [title, setTitle] = useState("");
@@ -41,14 +43,30 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    projectService.getProjects().then(setProjects).catch(setError);
+    projectService.getProjects()
+      .then(setProjects)
+      .catch(setError);
   }, []);
+
+  useEffect(() => {
+    if (projects.length > 0) {
+      setAnimateProjects(true);
+    }
+  }, [projects]);
 
   return (
     <div className="min-h-screen pt-20 flex flex-col justify-center items-center">
       <span className="text-white text-4xl font-bold p-5 underline-offset-4 underline">Projects</span>
-      <div className="grid justify-center grid-cols-2 md:grid-cols-4 gap-5 p-5">
-          {projects.map((project, index) => (<CardProject key={index} title={project.title} description={project.description} img={project.img} />))}
+      <div className="grid justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5">
+        {projects.map((project, index) => (
+          <CardProject 
+            key={index}
+            title={project.title}
+            description={project.description}
+            img={project.img}
+            className={`transform ${animateProjects ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700 ease-in`}
+          />
+        ))}
       </div>
       <span className="text-white text-4xl font-bold p-5 underline-offset-4 underline">Create Project</span>
       <div className="text-white py-5">
