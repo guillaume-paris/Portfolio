@@ -1,8 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import Card from "../../components/Card";
-
-import { AuthService } from "../../services/AuthService";
 
 import { AuthContext } from "../../context/AuthContext";
 import Unauthenticated from "./Unauthenticated/Unauthenticated";
@@ -10,9 +8,7 @@ import Authenticated from "./Authenticated/Authenticated";
 
 function Profile() {
 
-  const authService = new AuthService();
   const { isAuthenticated } = useContext(AuthContext);
-  const { setIsAuthenticated } = useContext(AuthContext);
 
   return (
     <>
