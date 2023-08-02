@@ -20,8 +20,8 @@ const About = () => {
             <span className="text-white text-4xl font-bold p-5 underline-offset-4 underline">About me ? my carrer :</span>
             <ol className="relative border-l-4 border-gray-700 m-10">    
                 <li className="mb-10 ml-4">
-                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '1.5s' }}></div>
-                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '2s' }}>
+                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '0s' }}></div>
+                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '0s' }}>
                         <time className="mb-1 text-lg font-normal leading-none text-gray-500">2023</time>
                         <h3 className="flex flex-row items-center gap-4 text-2xl font-semibold text-white my-2">
                             <img width={60} height={60} className="rounded-xl" src={dennemeyerLogo} alt="dennemeyer-logo"/>
@@ -31,8 +31,8 @@ const About = () => {
                     </div>
                 </li>              
                 <li className="mb-10 ml-4">
-                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '1.5s' }}></div>
-                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '1.5s' }}>
+                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '0.5s' }}></div>
+                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '0.5s' }}>
                         <time className="mb-1 text-lg font-normal leading-none text-gray-500">2022</time>
                         <h3 className="flex flex-row items-center gap-4 text-2xl font-semibold text-white my-2">
                             <img width={60} height={60} className="rounded-xl" src={immopadLogo} alt="immopad-logo"/>
@@ -53,8 +53,8 @@ const About = () => {
                     </div>
                 </li>
                 <li className="mb-10 ml-4">
-                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '500ms' }}></div>
-                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '500ms' }}>
+                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '1.5s' }}></div>
+                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '1.5s' }}>
                         <time className="mb-1 text-lg font-normal leading-none text-gray-500">2020 - 2025</time>
                         <h3 className="flex flex-row items-center gap-4 text-2xl font-semibold text-white my-2">
                             <img width={60} height={60} className="rounded-xl" alt="epitech-logo" src="https://scontent-cdg4-2.xx.fbcdn.net/v/t39.30808-6/246410252_10158041328906116_2106638515716593300_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fPpsbsLhCIYAX-7fuYY&_nc_ht=scontent-cdg4-2.xx&oh=00_AfCdan8ypSXaASVpX1OGjnlWf-Oq37uV2RYYuLDyp5L46w&oe=64CDEEDE"/>
@@ -64,8 +64,8 @@ const About = () => {
                     </div>
                 </li>
                 <li className="mb-10 ml-4">
-                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`}></div>
-                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`}>
+                    <div className={`absolute w-4 h-4 rounded-full -left-2.5 border border-gray-900 bg-gray-700 transform ${loaded ? 'opacity-100' : 'opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '2s' }}></div>
+                    <div className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '2s' }}>
                         <time className="mt-10 mb-1 text-lg font-normal leading-none text-gray-500">2019 - 2020</time>
                         <h3 className="text-2xl font-semibold text-white">Bachelor of Science</h3>
                         <p className="mb-4 text-xl font-normal text-gray-400">With a specialization in Digital Science (French baccalaureate)</p>

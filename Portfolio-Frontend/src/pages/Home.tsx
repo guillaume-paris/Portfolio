@@ -20,8 +20,8 @@ function Home() {
                 Guillaume Paris
             </span>
             <span className={`text-xl text-justify mt-4 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-32 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '500ms' }}>
-                Hi there ! I'm a Epitech student at the Nancy campus. I'm currently in my 3rd year of studies. 
-                In my professional experiences, I have worked with frameworks such as React or Angular. That's why I use them to make my own portfolio!
+                Hi there ! I'm a Epitech student at the Nancy campus. I'm currently in my fourth year of studies.
+                In my professional experiences, I have worked with many frameworks such as React or Angular. That's why I use them to make my own portfolio!
             </span>
             <div className="flex flex-row flex-wrap sm:justify-start justify-center gap-5 mt-4 mb-10">
                 <div aria-label="button-animation-01" className={`transform ${loaded ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'} transition-all duration-700 ease-out`} style={{ transitionDelay: '0.8s' }}>
